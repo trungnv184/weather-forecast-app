@@ -44,6 +44,7 @@ export const useFetchWeathers = (locationName) => {
     };
 
     if (!locationName) {
+      setWeathers([]);
       return;
     }
 

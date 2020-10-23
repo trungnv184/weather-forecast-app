@@ -17,14 +17,11 @@ const Search = () => {
   };
 
   const handleKeyPress = (event) => {
-    if (event) {
-      event.preventDefault();
-    }
-
     const code = event.keyCode || event.which;
 
     if (code === 13) {
       setLocation(city);
+      event.preventDefault();
     }
   };
 
