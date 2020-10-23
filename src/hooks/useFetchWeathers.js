@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import * as weatherService from "../services/weatherService";
-import {getFemperatureFormat, getWeekDay} from "../utils/convertedHelper";
+import {getTemperatureFormat, getWeekDay} from "../utils/convertHelper";
 
 const mapWeathersData = (weathersResponse) => {
   if (!weathersResponse) {
@@ -10,8 +10,8 @@ const mapWeathersData = (weathersResponse) => {
   const weathers = weathersResponse.consolidated_weather.splice(0, 5) || [];
   return weathers.map((weather) => ({
     id: weather.id,
-    minTemp: getFemperatureFormat(weather.min_temp),
-    maxTemp: getFemperatureFormat(weather.max_temp),
+    minTemp: getTemperatureFormat(weather.min_temp),
+    maxTemp: getTemperatureFormat(weather.max_temp),
     applicableDate: getWeekDay(weather.applicable_date)
   }));
 };

@@ -16,8 +16,8 @@ const Weather = ({day, min, max}) => {
 
 Weather.propTypes = {
   day: PropTypes.string.isRequired,
-  min: PropTypes.number.isRequired,
-  max: PropTypes.number.isRequired
+  min: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  max: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 export default Weather;

@@ -12,20 +12,16 @@ const Search = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleChangeSearchTerm = (event) => {
-    if (!event) {
-      return;
-    }
-
-    setCity(event.target.value);
-  };
-
   const handleSearchLocation = () => {
     setLocation(city);
   };
 
   const handleKeyPress = (event) => {
-    var code = event.keyCode || event.which;
+    if (event) {
+      event.preventDefault();
+    }
+
+    const code = event.keyCode || event.which;
 
     if (code === 13) {
       setLocation(city);
@@ -39,10 +35,10 @@ const Search = () => {
         placeholder="Search"
         className="mr-sm-2"
         value={city}
-        onChange={handleChangeSearchTerm}
+        onChange={(event) => setCity(event.target.value)}
         onKeyPress={handleKeyPress}
       />
-      <Button variant="outline-success" onSubmit={handleSearchLocation}>
+      <Button variant="outline-success" onClick={handleSearchLocation}>
         Search
       </Button>
     </Form>

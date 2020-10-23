@@ -1,4 +1,4 @@
-export const getFemperatureFormat = (temp) => {
+export const getTemperatureFormat = (temp) => {
   return temp ? Number(temp).toFixed(1) : "Unknown Temp";
 };
 
