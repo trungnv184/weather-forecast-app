@@ -24,7 +24,7 @@ Run `yarn test` to execute the unit tests via Jest.
 Run `yarn format` to run format code with prettier plugin
 
 ## Lint code
-Run `yarn lint` to lint code with ESLint
+Run `yarn lint` to lint code with ESLint  
 
 ## Tech Stacks
 - The project is created by [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html)
