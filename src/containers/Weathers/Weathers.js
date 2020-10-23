@@ -1,16 +1,26 @@
 import React from "react";
 import Weather from "../../components/Weather/Weather";
 import CardDeck from "react-bootstrap/CardDeck";
+import {useFetchWeathers} from "../../hooks/useFetchWeathers";
+import {useLocationContext} from "../../contexts/LocationContext";
+import Spinner from "../../components/Spinner/Spinner";
+import Container from "react-bootstrap/Container";
 
 const Weathers = () => {
-  return (
-    <CardDeck className="p-3">
-      <Weather day="Monday" min={22.5} max={30} />
-      <Weather day="Tuesday" min={23} max={35} />
-      <Weather day="Wednesday" min={30} max={35} />
-      <Weather day="Thursday" min={26} max={30} />
-      <Weather day="Friday" min={28} max={30} />
-    </CardDeck>
+  const {location} = useLocationContext();
+  const {isLoading, weathers} = useFetchWeathers(location);
+
+  return isLoading ? (
+    <Spinner />
+  ) : (
+    <Container fluid>
+      <CardDeck className="p-3">
+        {weathers.length > 0 &&
+          weathers.map(({id, minTemp, maxTemp, applicableDate}) => (
+            <Weather key={id} day={applicableDate} min={minTemp} max={maxTemp} />
+          ))}
+      </CardDeck>
+    </Container>
   );
 };
 

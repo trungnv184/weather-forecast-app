@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Weathers from "./containers/Weathers/Weathers";
-import Layout from "./hoc/Layout/Layout";
+import Layout from "./hocs/Layout/Layout";
 
 const App = () => {
   return (
