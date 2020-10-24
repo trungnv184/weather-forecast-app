@@ -5,6 +5,11 @@ import {LocationProvider} from "./contexts/LocationContext";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as serviceWorker from "./serviceWorker";
+import {stopReportingRuntimeErrors} from "react-error-overlay";
+
+if (process.env.NODE_ENV === "development") {
+  stopReportingRuntimeErrors(); // disables error overlays
+}
 
 const RootApp = () => {
   return (
