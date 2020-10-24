@@ -23,7 +23,7 @@ SearchWeatherResult.propTypes = {
   weathers: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
-      day: PropTypes.string.isRequired,
+      day: PropTypes.string,
       min: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       max: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     })
