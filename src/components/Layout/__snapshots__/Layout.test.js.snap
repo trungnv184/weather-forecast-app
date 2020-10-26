@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<header
+  class="header bg-white border-bottom shadow-sm"
+>
+  <nav
+    class="navbar navbar-expand-lg navbar-light"
+  >
+    <form
+      class="form-inline"
+    >
+      <input
+        class="mr-sm-2 form-control"
+        placeholder="Search"
+        type="text"
+        value="Ho Chi Minh City"
+      />
+      <button
+        class="btn btn-outline-success"
+        type="button"
+      >
+        Search
+      </button>
+    </form>
+  </nav>
+</header>
+`;

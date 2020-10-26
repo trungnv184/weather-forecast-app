@@ -5,10 +5,10 @@ import PropTypes from "prop-types";
 const Weather = ({day, min, max}) => {
   return (
     <Card bg="light">
-      <Card.Header>{day}</Card.Header>
+      <Card.Header data-testid="day">{day}</Card.Header>
       <Card.Body>
-        <Card.Text>Min: {min}</Card.Text>
-        <Card.Text>Max: {max}</Card.Text>
+        <Card.Text data-testid="min-temp">Min: {min}</Card.Text>
+        <Card.Text data-testid="max-temp">Max: {max}</Card.Text>
       </Card.Body>
     </Card>
   );

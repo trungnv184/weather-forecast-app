@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<p
+  class="title"
+  data-testid="search-criteria"
+>
+  Please enter a location to get the weather forecast
+</p>
+`;

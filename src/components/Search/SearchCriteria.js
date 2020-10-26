@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const SearchCriteria = ({searchTerm}) => {
   return (
-    <p className="title">
+    <p className="title" data-testid="search-criteria">
       {searchTerm
         ? `Weather Forecast for location: ${searchTerm}`
         : "Please enter a location to get the weather forecast"}

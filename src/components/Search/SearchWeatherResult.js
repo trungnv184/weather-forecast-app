@@ -4,12 +4,17 @@ import CardDeck from "react-bootstrap/CardDeck";
 import Weather from "../Weather/Weather";
 
 const SearchWeatherResult = ({weathers, error}) => {
+  const isEmptyWeathers = () => {
+    return !weathers || weathers.length === 0;
+  };
   return error ? (
-    <p>Something went wrong happened. Please try again !!!</p>
+    <p data-testid="error-message">Something went wrong happened. Please try again !!!</p>
   ) : (
-    <CardDeck className="p-3">
-      {weathers.length === 0 ? (
-        <p>Weather data for this location not available. Please search another one!</p>
+    <CardDeck data-testid="weathers-container" className="p-3">
+      {isEmptyWeathers() ? (
+        <p data-testid="empty-result">
+          Weather data for this location not available. Please search another one!
+        </p>
       ) : (
         weathers.map(({id, minTemp, maxTemp, applicableDate}) => (
           <Weather key={id} day={applicableDate} min={minTemp} max={maxTemp} />

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<div
+  class="card bg-light"
+>
+  <div
+    class="card-header"
+    data-testid="day"
+  />
+  <div
+    class="card-body"
+  >
+    <p
+      class="card-text"
+      data-testid="min-temp"
+    >
+      Min: 
+    </p>
+    <p
+      class="card-text"
+      data-testid="max-temp"
+    >
+      Max: 
+    </p>
+  </div>
+</div>
+`;
