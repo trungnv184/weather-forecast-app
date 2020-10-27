@@ -2,7 +2,7 @@ import React from "react";
 import {render, cleanup} from "@testing-library/react";
 import {screen} from "@testing-library/dom";
 import SearchWeatherResult from "./SearchWeatherResult";
-import {weatherResultMockData} from "./__mocks__/searchWeatherResultMock";
+import {MockWeatherResultData} from "../../test/mockData";
 
 afterEach(cleanup);
 
@@ -22,7 +22,7 @@ test("should display empty result message when search location and return empty 
 });
 
 test("should display weather forecast for five days", () => {
-  render(<SearchWeatherResult weathers={weatherResultMockData} />);
+  render(<SearchWeatherResult weathers={MockWeatherResultData} />);
   expect(screen.queryAllByTestId("day").length).toBe(5);
   expect(screen.queryAllByTestId("min-temp").length).toBe(5);
   expect(screen.queryAllByTestId("max-temp").length).toBe(5);

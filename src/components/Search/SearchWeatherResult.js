@@ -12,7 +12,7 @@ const SearchWeatherResult = ({weathers, error}) => {
   ) : (
     <CardDeck data-testid="weathers-container" className="p-3">
       {isEmptyWeathers() ? (
-        <p data-testid="empty-result">
+        <p data-testid="empty-result" className="w-100 text-center">
           Weather data for this location not available. Please search another one!
         </p>
       ) : (

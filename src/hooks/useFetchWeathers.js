@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import * as weatherService from "../services/weatherService";
+import {getLocationData, getWeathersFromLocation} from "../services/weatherService";
 import {getTemperatureFormat, getWeekDay} from "../utils/convertHelper";
 
 const mapWeathersData = (weathersResponse) => {
@@ -25,14 +25,15 @@ export const useFetchWeathers = (locationName) => {
     const fetchWeathersData = async () => {
       try {
         setIsLoading(true);
-        const locationData = await weatherService.getLocationData(locationName);
+        const locationData = await getLocationData(locationName);
+
         if (locationData.length === 0) {
           setWeathers([]);
           return;
         }
 
         const {woeid} = locationData[0];
-        const weathersData = await weatherService.getWeathersFromLocation(woeid);
+        const weathersData = await getWeathersFromLocation(woeid);
         const weathers = mapWeathersData(weathersData);
 
         setWeathers(weathers);

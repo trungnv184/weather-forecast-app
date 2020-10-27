@@ -6,6 +6,7 @@ exports[`snapshot 1`] = `
   data-testid="weathers-container"
 >
   <p
+    class="w-100 text-center"
     data-testid="empty-result"
   >
     Weather data for this location not available. Please search another one!
