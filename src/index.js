@@ -1,22 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import {LocationProvider} from "./contexts/LocationContext";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as serviceWorker from "./serviceWorker";
 
-const RootApp = () => {
-  return (
-    <LocationProvider>
-      <App />
-    </LocationProvider>
-  );
-};
-
 ReactDOM.render(
   <React.StrictMode>
-    <RootApp />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
