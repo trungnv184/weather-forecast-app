@@ -19,26 +19,16 @@ const mapWeathersData = (weathersResponse) => {
 };
 
 export const useFetchWeathers = (locationName) => {
-  // const dispatch = useDispatchContext();
   const {state, dispatch} = useAppContext();
-  // const dispatch = useDispatchContext();
-
-  // console.log(state);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [weathers, setWeathers] = useState([]);
-  // const [error, setError] = useState(null);
-
   useEffect(() => {
     const fetchWeathersData = async () => {
       try {
-        // setIsLoading(true);
         dispatch({
           type: actionTypes.SET_LOADING_STATUS
         });
         const locationData = await getLocationData(locationName);
 
         if (locationData.length === 0) {
-          // setWeathers([]);
           dispatch({
             type: actionTypes.SET_WEATHERS_RESPONSE,
             weathers: []
@@ -50,24 +40,19 @@ export const useFetchWeathers = (locationName) => {
         const weathersData = await getWeathersFromLocation(woeid);
         const weathers = mapWeathersData(weathersData);
 
-        // setWeathers(weathers);
         dispatch({
           type: actionTypes.SET_WEATHERS_RESPONSE,
           weathers
         });
       } catch (error) {
-        // setError(error);
         dispatch({
           type: actionTypes.SET_ERROR,
           error
         });
-      } finally {
-        // setIsLoading(false);
       }
     };
 
     if (!locationName) {
-      // setWeathers([]);
       dispatch({
         type: actionTypes.SET_WEATHERS_RESPONSE,
         weathers: []
@@ -76,13 +61,7 @@ export const useFetchWeathers = (locationName) => {
     }
 
     fetchWeathersData();
-  }, [locationName]);
+  }, [locationName, dispatch]);
 
   return state;
-
-  // const state = useStateContext();
-
-  // console.log(state, "AFTER");
-
-  // return state;
 };

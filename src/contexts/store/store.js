@@ -1,11 +1,11 @@
 import React, {useContext} from "react";
 import {createContext, useReducer} from "react";
 import {initialState, AppReducer} from "./appReducer";
-// export const useStore = () => useCreateContext(AppReducer, initialState);
+const noop = () => {};
 
 const AppContext = createContext({
   state: initialState,
-  dispatch: () => {}
+  dispatch: noop
 });
 
 export const StoreProvider = ({children}) => {
